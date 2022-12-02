@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int input_n();
 int sum_n_nos(int n);
 void output(int n, int sum);
@@ -13,7 +14,10 @@ int main(){
 int input_n(){
   int x;
   printf("Enter a number\n");
-  scanf("%d", &x);
+  if(scanf("%d", &x)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(x);
 }
 
@@ -31,5 +35,5 @@ void output(int n, int sum){
   for(i = 2;i<=n;i++){
     printf("+%d", i);
   }
-  printf(" is %d",sum);
+  printf(" is %d\n",sum);
 }

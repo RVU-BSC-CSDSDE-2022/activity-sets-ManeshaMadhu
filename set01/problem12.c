@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct complex {
 	int real,img;
 };
@@ -22,14 +23,20 @@ int main(){
 int get_n(){
   int a;
   printf("Enter a number.\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
 Complex input_complex(){
   Complex a;
   printf("Enter a and b where a + ib is the first complex number.\n");
-   scanf("%d%d", &a.real, &a.img);
+   if(scanf("%d%d", &a.real, &a.img)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -61,5 +68,5 @@ void output(int n, Complex c[n], Complex result){
     printf("%d+%di + ",c[i].real,c[i].img);
   }
   printf("%d+%di ",c[n-1].real,c[n-1].img);
-  printf("is %d+%di",result.real,result.img);
+  printf("is %d+%di\n",result.real,result.img);
 }

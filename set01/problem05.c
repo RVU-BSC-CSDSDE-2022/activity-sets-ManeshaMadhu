@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int input();
 int compare(int a, int b, int c);
 void output(int a, int b, int c, int largest);
@@ -15,7 +16,10 @@ int main(){
 int input(){
   int x;
   printf("Enter a number\n");
-  scanf("%d", &x);
+  if(scanf("%d", &x)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(x);
 }
 
@@ -26,5 +30,5 @@ int compare(int a, int b, int c){
 }
 
 void output(int a, int b, int c, int largest){
-  printf("The largest of %d,%d and %d is %d.",a,b,c,largest);
+  printf("The largest of %d,%d and %d is %d.\n",a,b,c,largest);
 }

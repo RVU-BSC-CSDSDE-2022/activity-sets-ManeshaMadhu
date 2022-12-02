@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct complex {
 	int real;
 	int img;
@@ -20,7 +21,10 @@ int main(){
 Complex input_complex(){
   Complex a;
   printf("Enter a and b where a + ib is the first complex number.\n");
-   scanf("%d%d", &a.real, &a.img);
+   if(scanf("%d%d", &a.real, &a.img)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -32,5 +36,5 @@ Complex add_complex(Complex a, Complex b){
 }
 
 void output(Complex a, Complex b, Complex sum){
-  printf("The sum of %d+%di and %d+%di is %d+%di",a.real,a.img,b.real,b.img,sum.real,sum.img);
+  printf("The sum of %d+%di and %d+%di is %d+%di\n",a.real,a.img,b.real,b.img,sum.real,sum.img);
 }

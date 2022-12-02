@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 #include<math.h>
 double input();
 double square_root(double n);
@@ -12,8 +13,11 @@ int main(){
 
 double input(){
   double a;
-  printf("Enter a number");
-  scanf("%lf", &a);
+  printf("Enter a number\n");
+  if(scanf("%lf", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -28,5 +32,5 @@ double square_root(double n){
 }
 
 void output(double n, double sqrroot){
-  printf("Square root of %.2lf is %.2lf",n,sqrroot);
+  printf("Square root of %.2lf is %.2lf\n",n,sqrroot);
 }
