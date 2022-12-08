@@ -34,10 +34,15 @@ int stringcompare(char *string1, char *string2){
 
 void output(char *string1, char *string2, int result){
   if(result == 0)
-  {printf("Both words are equal"\n);}
+  {
+    printf("Both words are equal\n");
+  }
   else{
     if(result > 0){printf("%s is greater than %s\n", 
-     string1,string2);}
-    else{printf("%s is greater than %s\n", string2,string1);}
+     string1,string2);
+    }
+    else{
+      printf("%s is greater than %s\n", string2,string1);
+    }
   }
 }
