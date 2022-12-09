@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input();
 int find_gcd(int a, int b);
 void output(int a, int b, int gcd);
@@ -15,7 +16,10 @@ int main(){
 
 int input(){
   int a;
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -26,5 +30,5 @@ int find_gcd(int a, int b){
 }
 
 void output(int a, int b, int gcd){
-  printf("the gcd for %d and %d is %d",a,b,gcd);
+  printf("the gcd for %d and %d is %d\n",a,b,gcd);
 }

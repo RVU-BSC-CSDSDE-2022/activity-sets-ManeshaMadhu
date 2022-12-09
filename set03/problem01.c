@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void input(float *base, float *height);
 void find_area(float base, float height, float *area);
 void output(float base, float height, float area);
@@ -11,9 +12,15 @@ int main(){
 
 void input(float *base, float *height){
   printf("Enter the base of the triangle\n");
-  scanf("%f", base);
+  if(scanf("%f", base)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   printf("Enter the height of the triangle\n");
-  scanf("%f", height);
+  if(scanf("%f", height)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 void find_area(float base, float height, float *area){

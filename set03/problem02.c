@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input_side();
 int check_scalene(int a, int b, int c);
 void output(int a, int b, int c, int isscalene);
@@ -17,7 +18,10 @@ int main(){
 
 int input_side(){
   int a;
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 

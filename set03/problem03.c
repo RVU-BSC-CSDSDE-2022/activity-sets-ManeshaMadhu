@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input_number();
 int is_composite(int n);
 void output(int n, int result);
@@ -14,7 +15,10 @@ int main(){
 int input_number(){
   int a;
   printf("Enter  a number\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void input_string(char *a);
 void str_reverse(char *str, char *rev_str);
 void output(char *a, char *reverse_a);
@@ -12,7 +13,10 @@ int main(){
 
 void input_string(char *a){
   printf("Enter the word\n");
-  scanf("%s", a);
+  if(scanf("%s", a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 void str_reverse(char *str, char *rev_str){

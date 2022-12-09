@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input_array_size();
 void input_array(int n, int a[n]);
 int sum_composite_numbers(int n, int a[n]);
@@ -15,7 +16,10 @@ int main(){
 int input_array_size(){
   int a;
   printf("Enter a the size of the array\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -23,7 +27,10 @@ void input_array(int n, int a[n]){
   printf("Enter the numbers of the array\n");
   int i;
   for(i = 0;i<n;i++){
-    scanf("%d", &a[i]);
+    if(scanf("%d", &a[i])!=1){
+      printf("Error in user input system can't continue\n");
+      exit(0);
+    }
   }
 }
 
