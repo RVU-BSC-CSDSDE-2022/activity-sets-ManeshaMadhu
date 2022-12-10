@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input();
 int find_fibo(int n);
 void output(int n, int fibo);
@@ -12,7 +13,10 @@ int main(){
 int input(){
   int a;
   printf("Enter a number\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 

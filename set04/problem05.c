@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input_array_size();
 void init_array(int n, int a[n]);
 void erotosthenes_sieve(int n, int a[n]);
@@ -18,7 +19,10 @@ int main()
 int input_array_size(){
   int a;
   printf("Enter a number\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -50,4 +54,5 @@ void output(int n, int a[n]){
       printf(", %d", a[i]);
     }
   }
+  printf("\n");
 }

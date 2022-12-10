@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 void input(float *x1, float *y1, float *x2, float *y2);
 float find_distance(float x1, float y1, float x2, float y2);
 void output(float x1, float y1, float x2, float y2, float distance);
@@ -13,9 +14,15 @@ int main(){
 
 void input(float *x1, float *y1, float *x2, float *y2){
   printf("Enter the first x and y point\n");
-  scanf("%f %f",x1,y1);
+  if(scanf("%f %f",x1,y1)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   printf("Enter the second x and y point\n");
-  scanf("%f %f",x2,y2);
+  if(scanf("%f %f",x2,y2)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 float find_distance(float x1, float y1, float x2, float y2){

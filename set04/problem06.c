@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void input_string(char *a, char *b);
 int sub_str_index(char *string, char *substring);
 void output(char *string, char *substring, int index);
@@ -12,9 +13,15 @@ int main(){
 
 void input_string(char *a, char *b){
   printf("Enter the string\n");
-  scanf("%s", a);
+  if(scanf("%s", a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   printf("Enter the substring\n");
-  scanf("%s", b);
+  if(scanf("%s", b)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 int sub_str_index(char *string, char*substring){

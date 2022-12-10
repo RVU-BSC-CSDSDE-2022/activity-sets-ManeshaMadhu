@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 typedef struct point {
     float x, y;
 } Point;
@@ -23,7 +24,10 @@ int main(){
 Point input_point(){
   Point a;
   printf("Enter the point x and y\n");
-  scanf("%f %f",&a.x,&a.y);
+  if(scanf("%f %f",&a.x,&a.y)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
