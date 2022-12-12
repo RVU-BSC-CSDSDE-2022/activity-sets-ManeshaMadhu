@@ -24,15 +24,13 @@ int input(){
 
 //1 + (x^1)/3! + (x^2)/5! + (x^3)/7! + ...
 float borga_X(int x){
-  float sum=0.0,fact = 6.0,c = 1.0;
-  int i = 4;
+  float sum = 0.0,fact = 1.0,c = 1.0;
+  int i;
   int a = x;
-  while(c>0.000001){
+  for(i = 2;c>0.000001;x *= a,i += 2){
     sum = sum+c;
+    fact *= i*(i+1);
     c = x/fact;
-    x = x*a;
-    fact = fact*i*(i+1);
-    i += 2;
   }
   return(sum);
 }
