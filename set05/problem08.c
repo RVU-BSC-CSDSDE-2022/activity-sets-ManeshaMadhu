@@ -43,15 +43,21 @@ Fraction input_fraction(){
 void input_n_fractions(int n, Fraction f[n]){
   int i;
   for(i= 0;i<n;i++){
-    printf("Enter the %d fraction",i+1);
+    printf("Enter the %d fraction\n",i+1);
     f[i] = input_fraction();
   }
 }
 
 int find_gcd(int a, int b){
-  if(a == b){return(a);}
-  else if(a>b){find_gcd((a-b),b);}
-  else{find_gcd(a,(b-a));}
+  while(a!=b){
+    if(a>b){
+      a -= b;
+    }
+    else{
+      b -= a;
+    }
+  }
+  return(a);
 }
 
 Fraction add_fractions(Fraction f1, Fraction f2){
@@ -60,9 +66,11 @@ Fraction add_fractions(Fraction f1, Fraction f2){
   int num2 = f2.num*f1.den;
   int a = num1+num2;
   int gcd = find_gcd(a,b);
+  printf("%d",gcd);
   Fraction s;
   s.num = a/gcd;
   s.den = b/gcd;
+  printf("%d/%d\n", s.num,s.den);
   return(s);
 }
 
@@ -70,7 +78,7 @@ Fraction add_n_fractions(int n, Fraction f[n]){
   int i;
   Fraction sum = {0,0};
   for(i = 0;i<n;i++){
-    sum = add_n_fractions(sum,f[i]);
+    sum = add_fractions(sum,f[i]);
   }
   return(sum);
 }
