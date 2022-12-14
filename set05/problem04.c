@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 int input_degree();
 void input_coefficients(int n, float a[n]);
 float input_x();
@@ -19,21 +20,30 @@ int main(){
 int input_degree(){
   int z;
   printf("Enter the degree\n");
-  scanf("%d", &z);
+  if(scanf("%d", &z)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(z);
 }
 
 void input_coefficients(int n, float a[n]){
   for(int i = 0;i<n;i++){
     printf("Enter the %d coefficients\n",i+1);
-    scanf("%f", &a[i]);
+    if(scanf("%f", &a[i])!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   }
 }
 
 float input_x(){
   float z;
   printf("Enter the value of x\n");
-  scanf("%f", &z);
+  if(scanf("%f", &z)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(z);
 }
 

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int input_size();
 void input_array(int n, int a[n]);
 int find_largest_index(int n, int a[n]);
@@ -15,7 +16,10 @@ int main(){
 int input_size(){
   int a;
   printf("Enter the size of the array\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -23,7 +27,10 @@ void input_array(int n, int a[n]){
   int i;
   printf("Enter the elements of the array\n");
   for(i = 0;i<n;i++){
-    scanf("%d", &a[i]);
+    if(scanf("%d", &a[i])!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   }
 }
 

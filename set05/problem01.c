@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void input(int *num1, int *den1, int *num2, int *den2);
 void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den);
 void output(int num1, int den1, int num2, int den2, int res_num, int res_den);
@@ -12,9 +13,15 @@ int main(){
 
 void input(int *num1, int *den1, int *num2, int *den2){
   printf("Enter the first fration\n");
-  scanf("%d %d",num1,den1);
+  if(scanf("%d %d",num1,den1)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   printf("Enter the second fration\n");
-  scanf("%d %d",num2,den2);
+  if(scanf("%d %d",num2,den2)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den){

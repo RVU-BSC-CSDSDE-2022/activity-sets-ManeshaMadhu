@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 typedef struct fraction
 {
     int num, den;
@@ -23,13 +24,19 @@ int main(){
 int input_n(){
   int a;
   printf("Enter the size of the array\n");
-  scanf("%d", &a);
+  if(scanf("%d", &a)!=1){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
 Fraction input_fraction(){
   Fraction a;
-  scanf("%d %d", &a.num, &a.den);
+  if(scanf("%d %d", &a.num, &a.den)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 

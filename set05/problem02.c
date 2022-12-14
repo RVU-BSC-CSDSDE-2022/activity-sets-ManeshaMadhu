@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 typedef struct {
     int num, den;
 } Fraction;
@@ -18,10 +19,11 @@ int main(){
 
 Fraction input(){
   Fraction a;
-  int x = 1;
-  printf("Enter the %d fration\n",x);
-  scanf("%d %d",&a.num,&a.den);
-  x++;
+  printf("Enter the fration\n");
+  if(scanf("%d %d",&a.num,&a.den)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
   return(a);
 }
 
@@ -41,5 +43,5 @@ void smallest_fraction(Fraction a, Fraction b, Fraction c, Fraction *res){
 }
 
 void output(Fraction a, Fraction b, Fraction c, Fraction res){
-  printf("The smallest of %d/%d, %d/%d and %d/%d is %d/%d",a.num,a.den,b.num,b.den,c.num,c.den,res.num,res.den);
+  printf("The smallest of %d/%d, %d/%d and %d/%d is %d/%d\n",a.num,a.den,b.num,b.den,c.num,c.den,res.num,res.den);
 }

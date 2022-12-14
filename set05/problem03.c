@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 void input_n_and_r(int *n, int *r);
 int nCr(int n, int r);
 void output(int n, int r, int result);
@@ -13,7 +14,10 @@ int main(){
 
 void input_n_and_r(int *n, int *r){
   printf("Enter n and r values to calculate combinator\n");
-  scanf("%d %d",n,r);
+  if(scanf("%d %d",n,r)!=2){
+    printf("Error in user input system can't continue\n");
+    exit(0);
+  }
 }
 
 //n!/r!*(n-r)!
