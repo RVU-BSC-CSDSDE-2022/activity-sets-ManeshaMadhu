@@ -27,8 +27,8 @@ int is_composite(int n){
   for(i = 1;i<=n;i++){
     if(n%i == 0){
       c++;
-      if(c == 3);
-      break;
+      if(c == 3)
+        break;
     }
   }
   return(c);

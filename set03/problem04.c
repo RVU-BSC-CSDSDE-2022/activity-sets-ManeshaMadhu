@@ -36,23 +36,22 @@ void input_array(int n, int a[n]){
 }
 
 int is_composite(int z){
-  int count = 0;
-  for(int i = 0;i<=z;i++){
+  int i,c = 0;
+  for(i = 1;i<=z;i++){
     if(z%i == 0){
-      count++;
-    }
-    if(count == 3){
-      return(1);
+      c++;
+      if(c == 3)
+        break;
     }
   }
-  return(0);
+  return(c);
 }
 
 int sum_composite_numbers(int n, int a[n]){
   int i,j,c = 0,sum = 0;
   for(i = 0;i<n;i++){
     c = is_composite(a[i]);
-    if(c == 1){
+    if(c>2){
       sum += a[i];
       c = 0;
     }
