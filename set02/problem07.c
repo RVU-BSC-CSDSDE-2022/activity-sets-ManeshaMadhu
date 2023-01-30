@@ -26,8 +26,12 @@ int has_nice_name(char *c){
   int l = strlen(c);
   for(i = 0;i<l;i++){
     c[i] = tolower(c[i]);
-    if((c[i] == 'a')||(c[i] == 'e')||(c[i] == 'i')||(c[i] == 'o')||(c[i] == 'u')){v++;}
-    else{ct++;}
+    if((c[i] == 'a')||(c[i] == 'e')||(c[i] == 'i')||(c[i] == 'o')||(c[i] == 'u')){
+      v++;
+    }
+    else{
+      ct++;
+    }
   }
   if((v>=2)&&(ct>=2)){return(1);}
   else{return(0);}

@@ -18,7 +18,7 @@ int main()
 
 int input_array_size(){
   int a;
-  printf("Enter a number\n");
+  printf("Enter the array size\n");
   if(scanf("%d", &a)!=1){
     printf("Error in user input system can't continue\n");
     exit(0);
@@ -37,10 +37,8 @@ void erotosthenes_sieve(int n, int a[n]){
   int i,j;
   for(i = 0;i<n;i++){
     if(a[i] != 0){
-      for(j = i+1;j<n;j++){
-        if(a[j]%a[i] == 0){
-          a[j] = 0;
-        }
+      for(j = i+a[i];j<n;j+=a[i]){
+        a[j] = 0;
       }
     }
   }
