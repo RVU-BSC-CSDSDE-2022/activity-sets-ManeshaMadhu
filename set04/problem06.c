@@ -25,20 +25,20 @@ void input_string(char *a, char *b){
 }
 
 int sub_str_index(char *string, char*substring){
-int i,l,j,c;
-  for(i = 0;substring[i]!='\0';i++){}
-  l = i;
-  for(i = 0;string[i]!= '\0';i++){
-    if(string[i] == substring[0]){
-      c = 1;
-      for(j = 1;j<l;j++){
-        if(string[i+j] == substring[j]){c += 1;}
+int i,j = 0;
+  i = 0;
+  while(string[i]!='\0'){
+    if(string[i+j]==substring[j]){
+      j++;
+      if(substring[j]=='\0'){
+        return(i);
       }
     }
-    if(c == l){break;}
+    else{
+      i++;
+      j = 0;
+    }
   }
-  if(c == l){return(i);}
-  else{return(0);}
 }
 
 void output(char *string, char *substring, int index){
